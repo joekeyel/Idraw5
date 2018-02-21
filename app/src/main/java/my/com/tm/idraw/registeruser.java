@@ -179,7 +179,7 @@ public class registeruser extends AppCompatActivity {
 
 
                 } else {
-                    //testkkk uh hhjj
+                    //testkkk uh hhjjjjj
                     // Permission Denied
                     Toast.makeText(registeruser.this, "Pls Allow Permission To access full Feature", Toast.LENGTH_SHORT)
                             .show();
