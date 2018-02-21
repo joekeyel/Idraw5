@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+
+    <item android:id="@+id/search"
+        android:title="Search Element"
+        android:icon="@drawable/searchicon"
+        app:showAsAction="always" />
+
+
+    <item android:id="@+id/draw"
+        android:title="Draw"
+        android:icon="@drawable/drawicon"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/reload"
+        android:title="Reload"
+        android:icon="@drawable/reloadicon"
+        app:showAsAction="always" />
+
+
+    <item android:id="@+id/taglocation"
+        android:title="Save"
+        android:icon="@drawable/tagicon"
+        app:showAsAction="always"
+        />
+
+
+
+    <item android:id="@+id/signout"
+        android:title="Sign Out"
+        android:icon="@drawable/logout"
+
+        />
+    <item android:id="@+id/toggle"
+        android:title="Map Type"
+        android:icon="@drawable/togglemap"
+        />
+
+
+</menu>

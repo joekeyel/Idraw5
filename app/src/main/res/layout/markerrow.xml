@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/roundedrow"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imagemarker"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        />
+
+    <TextView
+        android:id="@+id/tvtitlemarker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:text="TextView"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvcoordinates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="TextView"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+</LinearLayout>

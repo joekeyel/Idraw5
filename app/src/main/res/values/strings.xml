@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">"Idraw"</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="register">Register to GCM</string>
+    <string name="push">Push Notification</string>
+    <string name="get">receive</string>
+    <string name="share">Register to server</string>
+    <string name="phone">PHONE NUMBER</string>
+    <string-array name="Group">
+        <item>SB</item>
+        <item>ST</item>
+        <item>KL</item>
+        <item>MSC</item>
+        <item>PJ</item>
+        <item>NS</item>
+        <item>JU</item>
+        <item>JS</item>
+        <item>PHG</item>
+        <item>MK</item>
+        <item>KK/PBP</item>
+        <item>TWU/SKN</item>
+        <item>KG/SB</item>
+        <item>MR/BTU</item>
+        <item>PG</item>
+        <item>KD/PR</item>
+        <item>PK</item>
+        <item>KEL</item>
+        <item>TG</item>
+
+    </string-array>
+
+    <string-array name="elementtype">
+        <item>Cabinet</item>
+        <item>ManHole</item>
+        <item>DP</item>
+
+    </string-array>
+
+    <string-array name="Status">
+        <item>VOICE OK AT DP</item>
+        <item>VOICE OK AT CABINET</item>
+        <item>VOICE NOT OK</item>
+        <item>PORT UP VOICE OK AT DP</item>
+
+        <item>PORT UP VOICE OK AT CABINET</item>
+        <item>PORT UP SPEED ISSUE</item>
+
+    </string-array>
+
+    <string-array name="adslstatus">
+        <item>ADSL UP</item>
+        <item>ADSL Down</item>
+        <item>ADSL UP Customer OK</item>
+        <item>ADSL UP Customer Unreachebale</item>
+        <item>PORT UP SPEED ISSUE</item>
+
+    </string-array>
+
+    <string name="title_activity_updatereasoncode">updatereasoncode</string>
+    <string name="ttno">Trouble Ticket No</string>
+    <string name="servicenumber">Service Number</string>
+    <string name="remark">Remarks</string>
+    <string name="update">Next</string>
+    <string name="servicenum">Service Number</string>
+    <string name="tvitem">tvItem</string>
+    <string name="basket">Basket</string>
+    <string name="building">Building</string>
+    <string name="total">Total</string>
+    <string name="comment">Comment</string>
+    <string name="addcomment">Add</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">passwordhint</string>
+    <string name="username">usernamehint</string>
+</resources>

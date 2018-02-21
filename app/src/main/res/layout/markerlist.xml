@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <SearchView
+        android:id="@+id/serachmarker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:id="@+id/markerlv"
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_margin="10dp">
+
+
+    </ListView>
+
+    <Button
+        android:id="@+id/dismissdialog"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Dismiss" />
+</LinearLayout>
