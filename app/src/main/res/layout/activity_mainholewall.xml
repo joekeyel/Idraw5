@@ -912,6 +912,7 @@
                 android:id="@+id/W2A8"/>
 
         </TableRow>
+    </TableLayout>
 
     <TableLayout
         android:layout_width="match_parent"
@@ -1356,7 +1357,7 @@
                 android:id="@+id/W3A8"/>
 
         </TableRow>
-
+    </TableLayout>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
