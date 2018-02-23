@@ -1,6 +1,7 @@
 package my.com.tm.idraw;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -31,10 +32,11 @@ public class mainholewall extends AppCompatActivity {
     String Markername;
     String createby;
 
-    ArrayList<String> nestduct = new ArrayList();
-    ArrayList<Integer> nestductid = new ArrayList();
+
 
     ArrayList<ductviewmodel> nestductmodelsarray = new ArrayList();
+
+    ArrayList<ductviewmodel> nestductmodelsarraydel = new ArrayList();
 
 
     @Override
@@ -71,6 +73,8 @@ public class mainholewall extends AppCompatActivity {
 
         int intID = getBackgroundColor(texttouch);
 
+        //if vacant
+
              if(intID == Color.parseColor("#3f51b5")){
 
              texttouch.setBackgroundColor(Color.parseColor("#ffffff"));
@@ -106,7 +110,17 @@ public class mainholewall extends AppCompatActivity {
 
             }
 
+//if taken then user touch it...this plan to delete
 
+        if(intID == Color.GREEN){
+
+            texttouch.setPaintFlags(texttouch.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
+
+            nestductobject.setWallduct(ids);
+            nestductobject.setWallductview(view.getId());
+            nestductmodelsarraydel.add(nestductobject);
+
+        }
 
 
     }
@@ -118,6 +132,7 @@ public class mainholewall extends AppCompatActivity {
         String wall = ids.substring(6);
 
         Integer n = nestductmodelsarray.size();
+        Integer d = nestductmodelsarraydel.size();
 
 
 
@@ -146,6 +161,33 @@ public class mainholewall extends AppCompatActivity {
 
         }
 
+
+        //for delete selected database
+
+        if(d>0) {
+
+
+            for (int l = 0; l < d; l++) {
+
+                String wallduct = nestductmodelsarraydel.get(l).getWallduct();
+                Integer viewid = nestductmodelsarraydel.get(l).getWallductview();
+
+
+                String walls = wallduct.substring(0, 2);
+
+                if (walls.equals(wall)) {
+
+
+
+                    deletefirebase(wallduct,viewid);
+                }
+
+
+            }
+
+
+        }
+
         loadfirebasewallduct();
 
     }
@@ -157,8 +199,27 @@ public class mainholewall extends AppCompatActivity {
             FirebaseDatabase databasefirebase = FirebaseDatabase.getInstance();
             final DatabaseReference myRef = databasefirebase.getReference();
             myRef.child("photomarkeridraw/" + FirebaseAuth
-                    .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).setValue(viewid);
+                    .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).child("textviewid").setValue(viewid);
 
+
+        }
+
+
+    }
+
+    public void deletefirebase(String wallduct,Integer viewid){
+
+        if (createby.equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
+
+            FirebaseDatabase databasefirebase = FirebaseDatabase.getInstance();
+            final DatabaseReference myRef = databasefirebase.getReference();
+            myRef.child("photomarkeridraw/" + FirebaseAuth
+                    .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).removeValue();
+
+            TextView strikethru =  (TextView)findViewById(viewid);
+
+            strikethru.setBackgroundColor(Color.parseColor("#3f51b5"));
+            strikethru.setPaintFlags(strikethru.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
 
         }
 
@@ -208,13 +269,23 @@ public class mainholewall extends AppCompatActivity {
                         for (DataSnapshot child3 : child2.getChildren()) {
 
                             String key = child3.getKey().toString();
-                            String viewid =  child3.getValue().toString();
+
 
                             if(!key.equals("createdby") && !key.equals("lat") && !key.equals("lng")){
 
-                                TextView occupyduct = (TextView)findViewById(Integer.parseInt(viewid));
-                                occupyduct.setBackgroundColor(Color.GREEN);
-                            }
+                                for (DataSnapshot child4 : child3.getChildren()) {
+
+                                    if(child4.getKey().toString().equals("textviewid") ) {
+                                        String viewid = child4.getValue().toString();
+
+                                        TextView occupyduct = (TextView) findViewById(Integer.parseInt(viewid));
+                                        occupyduct.setBackgroundColor(Color.GREEN);
+                                        occupyduct.setPaintFlags(occupyduct.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+                                    }
+                                }
+
+
+                               }
 
                             }
 
