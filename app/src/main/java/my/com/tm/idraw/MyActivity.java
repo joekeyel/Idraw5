@@ -1227,7 +1227,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
         Button longitudecopyaction = (Button)convertView.findViewById(R.id.copylongitude);
         Button gotowallbtn = (Button)convertView.findViewById(R.id.gotowall);
 
-        String markerid = marker.getTitle();
+        final String markerid = marker.getTitle();
         final String latitudestr = String.valueOf(marker.getPosition().latitude);
         final String longitudestr = String.valueOf(marker.getPosition().longitude);
 
@@ -1268,6 +1268,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
                 i.putExtra("markerlatlng",marker.getPosition());
                 i.putExtra("markertitle",marker.getTitle());
+                i.putExtra("markercreateby",marker.getSnippet());
                 startActivity(i);
 
                 alert.dismiss();
