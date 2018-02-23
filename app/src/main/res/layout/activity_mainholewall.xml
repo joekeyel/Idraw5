@@ -583,9 +583,18 @@
                 android:onClick="clickduct"
                 android:background="@color/colorPrimary"/>
 
+
         </TableRow>
 
     </TableLayout>
+
+
+    <Button
+        android:id="@+id/buttonW1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="clickductbutton"/>
 
     <TextView
         android:id="@+id/Wall2"
@@ -1161,7 +1170,12 @@
         </TableRow>
     </TableLayout>
 
-
+    <Button
+        android:id="@+id/buttonW2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="clickductbutton"/>
     <TextView
         android:id="@+id/Wall3"
         android:layout_width="wrap_content"
@@ -1737,7 +1751,12 @@
         </TableRow>
     </TableLayout>
 
-
+    <Button
+        android:id="@+id/buttonW3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="clickductbutton"/>
     <TextView
         android:id="@+id/Wall4"
         android:layout_width="wrap_content"
@@ -2317,6 +2336,13 @@
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/buttonW4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="clickductbutton"/>
 
 
 </android.support.v7.widget.LinearLayoutCompat>
