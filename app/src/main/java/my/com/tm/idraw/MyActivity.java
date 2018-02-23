@@ -2,6 +2,8 @@ package my.com.tm.idraw;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -1219,8 +1221,59 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
         });
 
+//copy to clipboard for DIME
+
+        Button latitudecopyaction = (Button)convertView.findViewById(R.id.copylatitude);
+        Button longitudecopyaction = (Button)convertView.findViewById(R.id.copylongitude);
+        Button gotowallbtn = (Button)convertView.findViewById(R.id.gotowall);
+
+        String markerid = marker.getTitle();
+        final String latitudestr = String.valueOf(marker.getPosition().latitude);
+        final String longitudestr = String.valueOf(marker.getPosition().longitude);
 
 
+        latitudecopyaction.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText(
+                        "Latitude", // What should I set for this "label"?
+                        latitudestr);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(MyActivity.this, "Saved latitude to clip board "+latitudestr, Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+
+        longitudecopyaction.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip2 = ClipData.newPlainText(
+                        "Longitude", // What should I set for this "label"?
+                        longitudestr);
+                clipboard.setPrimaryClip(clip2);
+                Toast.makeText(MyActivity.this, "Saved longitude to clip board "+longitudestr, Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+        gotowallbtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Intent i = new Intent(getApplicationContext(), mainholewall.class);
+
+                i.putExtra("markerlatlng",marker.getPosition());
+                i.putExtra("markertitle",marker.getTitle());
+                startActivity(i);
+
+                alert.dismiss();
+
+            }
+        });
     }
 
 

@@ -40,10 +40,28 @@
         <EditText
             android:id="@+id/updateremark"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textMultiLine"
-            android:lines="4" />
+            android:lines="4"
+            android:layout_height="1dp"/>
+
+        <Button
+            android:id="@+id/copylatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Copy Latitude" />
+
+        <Button
+            android:id="@+id/copylongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Copy Longitude" />
+
+        <Button
+            android:id="@+id/gotowall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="wall" />
     </LinearLayout>
 
     <LinearLayout
