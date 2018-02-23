@@ -914,6 +914,12 @@
         </TableRow>
     </TableLayout>
 
+
+    <TextView
+        android:id="@+id/Wall3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wall 3" />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -1358,6 +1364,13 @@
 
         </TableRow>
     </TableLayout>
+
+
+    <TextView
+        android:id="@+id/Wall4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wall 4" />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -1373,7 +1386,8 @@
                 android:layout_weight="0.125"
                 android:background="@color/fullyutilized"
                 android:text="H1"
-                android:id="@+id/W4H1"/>
+                android:id="@+id/W4H1"
+                />
 
             <TextView
                 android:layout_width="match_parent"
