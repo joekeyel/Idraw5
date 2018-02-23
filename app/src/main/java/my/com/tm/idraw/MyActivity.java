@@ -1274,6 +1274,8 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
 
             }
         });
+
+
     }
 
 
@@ -2028,5 +2030,11 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
         alertprogress.dismiss();
 
     }
+
+
+    //function when clicking duct from every wall
+
+
+
 
 }

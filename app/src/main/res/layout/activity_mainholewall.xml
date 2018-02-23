@@ -30,7 +30,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="H1"
                 android:id="@+id/W1H1"/>
 
@@ -38,43 +39,57 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H2"
-                android:id="@+id/W1H2" />
+                android:id="@+id/W1H2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H3"
-                android:id="@+id/W1H3"/>
+                android:id="@+id/W1H3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H4"
-                android:id="@+id/W1H4"/>
+                android:id="@+id/W1H4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H5"
-                android:id="@+id/W1H5"/>
+                android:id="@+id/W1H5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H6"
-                android:id="@+id/W1H6"/>
+                android:id="@+id/W1H6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H7"
-                android:id="@+id/W1H7"/>
+                android:id="@+id/W1H7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H8"
-                android:id="@+id/W1H8"/>
+                android:id="@+id/W1H8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -86,24 +101,31 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G1"
-                android:id="@+id/W1G1"/>
+                android:id="@+id/W1G1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G2"
-                android:id="@+id/W1G2"/>
+                android:id="@+id/W1G2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G3"
-                android:id="@+id/W1G3"/>
+                android:id="@+id/W1G3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
 
                 android:text="G4"
                 android:id="@+id/W1G4"/>
@@ -112,25 +134,33 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G5"
-                android:id="@+id/W1G5"/>
+                android:id="@+id/W1G5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G6"
-                android:id="@+id/W1G6"/>
+                android:id="@+id/W1G6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G7"
-                android:id="@+id/W1G7"/>
+                android:id="@+id/W1G7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G8"
-                android:id="@+id/W1G8"/>
+                android:id="@+id/W1G8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -142,43 +172,56 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F1"
-                android:id="@+id/W1F1"/>
+                android:id="@+id/W1F1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F2"
-                android:id="@+id/W1F2"/>
+                android:id="@+id/W1F2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+
                 android:text="F3"
-                android:id="@+id/W1F3"/>
+                android:id="@+id/W1F3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F4"
-                android:id="@+id/W1F4"/>
+                android:id="@+id/W1F4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F5"
-                android:id="@+id/W1F5"/>
+                android:id="@+id/W1F5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F6"
-                android:id="@+id/W1F6"/>
+                android:id="@+id/W1F6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="F7"
                 android:id="@+id/W1F7"/>
 
@@ -186,7 +229,9 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F8"
-                android:id="@+id/W1F8"/>
+                android:id="@+id/W1F8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -198,24 +243,31 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E1"
-                android:id="@+id/W1E1"/>
+                android:id="@+id/W1E1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E2"
-                android:id="@+id/W1E2"/>
+                android:id="@+id/W1E2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E3"
-                android:id="@+id/W1E3"/>
+                android:id="@+id/W1E3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="E4"
                 android:id="@+id/W1E4"/>
 
@@ -223,25 +275,33 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E5"
-                android:id="@+id/W1E5"/>
+                android:id="@+id/W1E5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E6"
-                android:id="@+id/W1E6"/>
+                android:id="@+id/W1E6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E7"
-                android:id="@+id/W1E7"/>
+                android:id="@+id/W1E7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E8"
-                android:id="@+id/W1E8"/>
+                android:id="@+id/W1E8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -253,49 +313,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D1"
-                android:id="@+id/W1D1"/>
+                android:id="@+id/W1D1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D2"
-                android:id="@+id/W1D2"/>
+                android:id="@+id/W1D2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D3"
-                android:id="@+id/W1D3"/>
+                android:id="@+id/W1D3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D4"
-                android:id="@+id/W1D4"/>
+                android:id="@+id/W1D4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D5"
-                android:id="@+id/W1D5"/>
+                android:id="@+id/W1D5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D6"
-                android:id="@+id/W1D6"/>
+                android:id="@+id/W1D6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D7"
-                android:id="@+id/W1D7"/>
+                android:id="@+id/W1D7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D8"
-                android:id="@+id/W1D8"/>
+                android:id="@+id/W1D8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -307,49 +383,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C1"
-                android:id="@+id/W1C1"/>
+                android:id="@+id/W1C1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C2"
-                android:id="@+id/W1C2"/>
+                android:id="@+id/W1C2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C3"
-                android:id="@+id/W1C3"/>
+                android:id="@+id/W1C3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C4"
-                android:id="@+id/W1C4"/>
+                android:id="@+id/W1C4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C5"
-                android:id="@+id/W1C5"/>
+                android:id="@+id/W1C5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C6"
-                android:id="@+id/W1C6"/>
+                android:id="@+id/W1C6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C7"
-                android:id="@+id/W1C7"/>
+                android:id="@+id/W1C7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C8"
-                android:id="@+id/W1C8"/>
+                android:id="@+id/W1C8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -361,49 +453,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B1"
-                android:id="@+id/W1B1"/>
+                android:id="@+id/W1B1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B2"
-                android:id="@+id/W1B2"/>
+                android:id="@+id/W1B2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B3"
-                android:id="@+id/W1B3"/>
+                android:id="@+id/W1B3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B4"
-                android:id="@+id/W1B4"/>
+                android:id="@+id/W1B4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B5"
-                android:id="@+id/W1B5"/>
+                android:id="@+id/W1B5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B6"
-                android:id="@+id/W1B6"/>
+                android:id="@+id/W1B6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B7"
-                android:id="@+id/W1B7"/>
+                android:id="@+id/W1B7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B8"
-                android:id="@+id/W1B8"/>
+                android:id="@+id/W1B8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -415,49 +523,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A1"
-                android:id="@+id/W1A1"/>
+                android:id="@+id/W1A1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A2"
-                android:id="@+id/W1A2"/>
+                android:id="@+id/W1A2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A3"
-                android:id="@+id/W1A3"/>
+                android:id="@+id/W1A3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A4"
-                android:id="@+id/W1A4"/>
+                android:id="@+id/W1A4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A5"
-                android:id="@+id/W1A5"/>
+                android:id="@+id/W1A5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A6"
-                android:id="@+id/W1A6"/>
+                android:id="@+id/W1A6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A7"
-                android:id="@+id/W1A7"/>
+                android:id="@+id/W1A7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A8"
-                android:id="@+id/W1A8"/>
+                android:id="@+id/W1A8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -482,7 +606,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="H1"
                 android:id="@+id/W2H1"/>
 
@@ -490,43 +615,57 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H2"
-                android:id="@+id/W2H2" />
+                android:id="@+id/W2H2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H3"
-                android:id="@+id/W2H3"/>
+                android:id="@+id/W2H3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H4"
-                android:id="@+id/W2H4"/>
+                android:id="@+id/W2H4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H5"
-                android:id="@+id/W2H5"/>
+                android:id="@+id/W2H5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H6"
-                android:id="@+id/W2H6"/>
+                android:id="@+id/W2H6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H7"
-                android:id="@+id/W2H7"/>
+                android:id="@+id/W2H7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H8"
-                android:id="@+id/W2H8"/>
+                android:id="@+id/W2H8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -538,24 +677,31 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G1"
-                android:id="@+id/W2G1"/>
+                android:id="@+id/W2G1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G2"
-                android:id="@+id/W2G2"/>
+                android:id="@+id/W2G2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G3"
-                android:id="@+id/W2G3"/>
+                android:id="@+id/W2G3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
 
                 android:text="G4"
                 android:id="@+id/W2G4"/>
@@ -564,25 +710,33 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G5"
-                android:id="@+id/W2G5"/>
+                android:id="@+id/W2G5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G6"
-                android:id="@+id/W2G6"/>
+                android:id="@+id/W2G6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G7"
-                android:id="@+id/W2G7"/>
+                android:id="@+id/W2G7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G8"
-                android:id="@+id/W2G8"/>
+                android:id="@+id/W2G8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -594,18 +748,23 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F1"
-                android:id="@+id/W2F1"/>
+                android:id="@+id/W2F1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F2"
-                android:id="@+id/W2F2"/>
+                android:id="@+id/W2F2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="F3"
                 android:id="@+id/W2F3"/>
 
@@ -613,24 +772,31 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F4"
-                android:id="@+id/W2F4"/>
+                android:id="@+id/W2F4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F5"
-                android:id="@+id/W2F5"/>
+                android:id="@+id/W2F5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F6"
-                android:id="@+id/W2F6"/>
+                android:id="@+id/W2F6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="F7"
                 android:id="@+id/W2F7"/>
 
@@ -638,7 +804,9 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F8"
-                android:id="@+id/W2F8"/>
+                android:id="@+id/W2F8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -650,24 +818,31 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E1"
-                android:id="@+id/W2E1"/>
+                android:id="@+id/W2E1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E2"
-                android:id="@+id/W2E2"/>
+                android:id="@+id/W2E2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E3"
-                android:id="@+id/W2E3"/>
+                android:id="@+id/W2E3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="E4"
                 android:id="@+id/W2E4"/>
 
@@ -675,25 +850,33 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E5"
-                android:id="@+id/W2E5"/>
+                android:id="@+id/W2E5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E6"
-                android:id="@+id/W2E6"/>
+                android:id="@+id/W2E6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E7"
-                android:id="@+id/W2E7"/>
+                android:id="@+id/W2E7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E8"
-                android:id="@+id/W2E8"/>
+                android:id="@+id/W2E8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -705,49 +888,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D1"
-                android:id="@+id/W2D1"/>
+                android:id="@+id/W2D1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D2"
-                android:id="@+id/W2D2"/>
+                android:id="@+id/W2D2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D3"
-                android:id="@+id/W2D3"/>
+                android:id="@+id/W2D3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D4"
-                android:id="@+id/W2D4"/>
+                android:id="@+id/W2D4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D5"
-                android:id="@+id/W2D5"/>
+                android:id="@+id/W2D5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D6"
-                android:id="@+id/W2D6"/>
+                android:id="@+id/W2D6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D7"
-                android:id="@+id/W2D7"/>
+                android:id="@+id/W2D7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D8"
-                android:id="@+id/W2D8"/>
+                android:id="@+id/W2D8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -759,49 +958,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C1"
-                android:id="@+id/W2C1"/>
+                android:id="@+id/W2C1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C2"
-                android:id="@+id/W2C2"/>
+                android:id="@+id/W2C2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C3"
-                android:id="@+id/W2C3"/>
+                android:id="@+id/W2C3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C4"
-                android:id="@+id/W2C4"/>
+                android:id="@+id/W2C4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C5"
-                android:id="@+id/W2C5"/>
+                android:id="@+id/W2C5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C6"
-                android:id="@+id/W2C6"/>
+                android:id="@+id/W2C6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C7"
-                android:id="@+id/W2C7"/>
+                android:id="@+id/W2C7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C8"
-                android:id="@+id/W2C8"/>
+                android:id="@+id/W2C8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -813,49 +1028,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B1"
-                android:id="@+id/W2B1"/>
+                android:id="@+id/W2B1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B2"
-                android:id="@+id/W2B2"/>
+                android:id="@+id/W2B2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B3"
-                android:id="@+id/W2B3"/>
+                android:id="@+id/W2B3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B4"
-                android:id="@+id/W2B4"/>
+                android:id="@+id/W2B4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B5"
-                android:id="@+id/W2B5"/>
+                android:id="@+id/W2B5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B6"
-                android:id="@+id/W2B6"/>
+                android:id="@+id/W2B6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B7"
-                android:id="@+id/W2B7"/>
+                android:id="@+id/W2B7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B8"
-                android:id="@+id/W2B8"/>
+                android:id="@+id/W2B8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -867,49 +1098,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A1"
-                android:id="@+id/W2A1"/>
+                android:id="@+id/W2A1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A2"
-                android:id="@+id/W2A2"/>
+                android:id="@+id/W2A2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A3"
-                android:id="@+id/W2A3"/>
+                android:id="@+id/W2A3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A4"
-                android:id="@+id/W2A4"/>
+                android:id="@+id/W2A4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A5"
-                android:id="@+id/W2A5"/>
+                android:id="@+id/W2A5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A6"
-                android:id="@+id/W2A6"/>
+                android:id="@+id/W2A6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A7"
-                android:id="@+id/W2A7"/>
+                android:id="@+id/W2A7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A8"
-                android:id="@+id/W2A8"/>
+                android:id="@+id/W2A8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
     </TableLayout>
@@ -933,7 +1180,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="H1"
                 android:id="@+id/W3H1"/>
 
@@ -941,43 +1189,57 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H2"
-                android:id="@+id/W3H2" />
+                android:id="@+id/W3H2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H3"
-                android:id="@+id/W3H3"/>
+                android:id="@+id/W3H3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H4"
-                android:id="@+id/W3H4"/>
+                android:id="@+id/W3H4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H5"
-                android:id="@+id/W3H5"/>
+                android:id="@+id/W3H5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H6"
-                android:id="@+id/W3H6"/>
+                android:id="@+id/W3H6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H7"
-                android:id="@+id/W3H7"/>
+                android:id="@+id/W3H7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H8"
-                android:id="@+id/W3H8"/>
+                android:id="@+id/W3H8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -989,24 +1251,31 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G1"
-                android:id="@+id/W3G1"/>
+                android:id="@+id/W3G1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G2"
-                android:id="@+id/W3G2"/>
+                android:id="@+id/W3G2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G3"
-                android:id="@+id/W3G3"/>
+                android:id="@+id/W3G3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
 
                 android:text="G4"
                 android:id="@+id/W3G4"/>
@@ -1015,25 +1284,33 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G5"
-                android:id="@+id/W3G5"/>
+                android:id="@+id/W3G5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G6"
-                android:id="@+id/W3G6"/>
+                android:id="@+id/W3G6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G7"
-                android:id="@+id/W3G7"/>
+                android:id="@+id/W3G7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G8"
-                android:id="@+id/W3G8"/>
+                android:id="@+id/W3G8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1045,51 +1322,66 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F1"
-                android:id="@+id/W3F1"/>
+                android:id="@+id/W3F1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F2"
-                android:id="@+id/W3F2"/>
+                android:id="@+id/W3F2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+
                 android:text="F3"
-                android:id="@+id/W3F3"/>
+                android:id="@+id/W3F3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F4"
-                android:id="@+id/W3F4"/>
+                android:id="@+id/W3F4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F5"
-                android:id="@+id/W3F5"/>
+                android:id="@+id/W3F5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F6"
-                android:id="@+id/W3F6"/>
+                android:id="@+id/W3F6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
                 android:text="F7"
-                android:id="@+id/W3F7"/>
+                android:id="@+id/W3F7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F8"
-                android:id="@+id/W3F8"/>
+                android:id="@+id/W3F8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1101,50 +1393,66 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E1"
-                android:id="@+id/W3E1"/>
+                android:id="@+id/W3E1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E2"
-                android:id="@+id/W3E2"/>
+                android:id="@+id/W3E2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E3"
-                android:id="@+id/W3E3"/>
+                android:id="@+id/W3E3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+
                 android:text="E4"
-                android:id="@+id/W3E4"/>
+                android:id="@+id/W3E4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E5"
-                android:id="@+id/W3E5"/>
+                android:id="@+id/W3E5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E6"
-                android:id="@+id/W3E6"/>
+                android:id="@+id/W3E6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E7"
-                android:id="@+id/W3E7"/>
+                android:id="@+id/W3E7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E8"
-                android:id="@+id/W3E8"/>
+                android:id="@+id/W3E8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1156,49 +1464,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D1"
-                android:id="@+id/W3D1"/>
+                android:id="@+id/W3D1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D2"
-                android:id="@+id/W3D2"/>
+                android:id="@+id/W3D2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D3"
-                android:id="@+id/W3D3"/>
+                android:id="@+id/W3D3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D4"
-                android:id="@+id/W3D4"/>
+                android:id="@+id/W3D4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D5"
-                android:id="@+id/W3D5"/>
+                android:id="@+id/W3D5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D6"
-                android:id="@+id/W3D6"/>
+                android:id="@+id/W3D6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D7"
-                android:id="@+id/W3D7"/>
+                android:id="@+id/W3D7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D8"
-                android:id="@+id/W3D8"/>
+                android:id="@+id/W3D8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1210,49 +1534,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C1"
-                android:id="@+id/W3C1"/>
+                android:id="@+id/W3C1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C2"
-                android:id="@+id/W3C2"/>
+                android:id="@+id/W3C2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C3"
-                android:id="@+id/W3C3"/>
+                android:id="@+id/W3C3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C4"
-                android:id="@+id/W3C4"/>
+                android:id="@+id/W3C4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C5"
-                android:id="@+id/W3C5"/>
+                android:id="@+id/W3C5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C6"
-                android:id="@+id/W3C6"/>
+                android:id="@+id/W3C6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C7"
-                android:id="@+id/W3C7"/>
+                android:id="@+id/W3C7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C8"
-                android:id="@+id/W3C8"/>
+                android:id="@+id/W3C8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1264,49 +1604,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B1"
-                android:id="@+id/W3B1"/>
+                android:id="@+id/W3B1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B2"
-                android:id="@+id/W3B2"/>
+                android:id="@+id/W3B2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B3"
-                android:id="@+id/W3B3"/>
+                android:id="@+id/W3B3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B4"
-                android:id="@+id/W3B4"/>
+                android:id="@+id/W3B4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B5"
-                android:id="@+id/W3B5"/>
+                android:id="@+id/W3B5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B6"
-                android:id="@+id/W3B6"/>
+                android:id="@+id/W3B6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B7"
-                android:id="@+id/W3B7"/>
+                android:id="@+id/W3B7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B8"
-                android:id="@+id/W3B8"/>
+                android:id="@+id/W3B8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1318,49 +1674,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A1"
-                android:id="@+id/W3A1"/>
+                android:id="@+id/W3A1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A2"
-                android:id="@+id/W3A2"/>
+                android:id="@+id/W3A2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A3"
-                android:id="@+id/W3A3"/>
+                android:id="@+id/W3A3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A4"
-                android:id="@+id/W3A4"/>
+                android:id="@+id/W3A4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A5"
-                android:id="@+id/W3A5"/>
+                android:id="@+id/W3A5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A6"
-                android:id="@+id/W3A6"/>
+                android:id="@+id/W3A6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A7"
-                android:id="@+id/W3A7"/>
+                android:id="@+id/W3A7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A8"
-                android:id="@+id/W3A8"/>
+                android:id="@+id/W3A8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
     </TableLayout>
@@ -1384,52 +1756,70 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+
                 android:text="H1"
                 android:id="@+id/W4H1"
+                android:tag="W4H1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H2"
-                android:id="@+id/W4H2" />
+                android:id="@+id/W4H2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H3"
-                android:id="@+id/W4H3"/>
+                android:id="@+id/W4H3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H4"
-                android:id="@+id/W4H4"/>
+                android:id="@+id/W4H4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H5"
-                android:id="@+id/W4H5"/>
+                android:id="@+id/W4H5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H6"
-                android:id="@+id/W4H6"/>
+                android:id="@+id/W4H6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H7"
-                android:id="@+id/W4H7"/>
+                android:id="@+id/W4H7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="H8"
-                android:id="@+id/W4H8"/>
+                android:id="@+id/W4H8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1441,24 +1831,31 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G1"
-                android:id="@+id/W4G1"/>
+                android:id="@+id/W4G1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G2"
-                android:id="@+id/W4G2"/>
+                android:id="@+id/W4G2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G3"
-                android:id="@+id/W4G3"/>
+                android:id="@+id/W4G3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
 
                 android:text="G4"
                 android:id="@+id/W4G4"/>
@@ -1467,25 +1864,33 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G5"
-                android:id="@+id/W4G5"/>
+                android:id="@+id/W4G5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G6"
-                android:id="@+id/W4G6"/>
+                android:id="@+id/W4G6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G7"
-                android:id="@+id/W4G7"/>
+                android:id="@+id/W4G7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="G8"
-                android:id="@+id/W4G8"/>
+                android:id="@+id/W4G8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1497,51 +1902,67 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F1"
-                android:id="@+id/W4F1"/>
+                android:id="@+id/W4F1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F2"
-                android:id="@+id/W4F2"/>
+                android:id="@+id/W4F2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+
                 android:text="F3"
-                android:id="@+id/W4F3"/>
+                android:id="@+id/W4F3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F4"
-                android:id="@+id/W4F4"/>
+                android:id="@+id/W4F4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F5"
-                android:id="@+id/W4F5"/>
+                android:id="@+id/W4F5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F6"
-                android:id="@+id/W4F6"/>
+                android:id="@+id/W4F6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+
                 android:text="F7"
-                android:id="@+id/W4F7"/>
+                android:id="@+id/W4F7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="F8"
-                android:id="@+id/W4F8"/>
+                android:id="@+id/W4F8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1553,24 +1974,31 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E1"
-                android:id="@+id/W4E1"/>
+                android:id="@+id/W4E1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E2"
-                android:id="@+id/W4E2"/>
+                android:id="@+id/W4E2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E3"
-                android:id="@+id/W4E3"/>
+                android:id="@+id/W4E3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
-                android:background="@color/fullyutilized"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"
                 android:text="E4"
                 android:id="@+id/W4E4"/>
 
@@ -1578,25 +2006,33 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E5"
-                android:id="@+id/W4E5"/>
+                android:id="@+id/W4E5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E6"
-                android:id="@+id/W4E6"/>
+                android:id="@+id/W4E6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E7"
-                android:id="@+id/W4E7"/>
+                android:id="@+id/W4E7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="E8"
-                android:id="@+id/W4E8"/>
+                android:id="@+id/W4E8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1608,49 +2044,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D1"
-                android:id="@+id/W4D1"/>
+                android:id="@+id/W4D1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D2"
-                android:id="@+id/W4D2"/>
+                android:id="@+id/W4D2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D3"
-                android:id="@+id/W4D3"/>
+                android:id="@+id/W4D3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D4"
-                android:id="@+id/W4D4"/>
+                android:id="@+id/W4D4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D5"
-                android:id="@+id/W4D5"/>
+                android:id="@+id/W4D5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D6"
-                android:id="@+id/W4D6"/>
+                android:id="@+id/W4D6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D7"
-                android:id="@+id/W4D7"/>
+                android:id="@+id/W4D7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="D8"
-                android:id="@+id/W4D8"/>
+                android:id="@+id/W4D8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1662,49 +2114,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C1"
-                android:id="@+id/W4C1"/>
+                android:id="@+id/W4C1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C2"
-                android:id="@+id/W4C2"/>
+                android:id="@+id/W4C2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C3"
-                android:id="@+id/W4C3"/>
+                android:id="@+id/W4C3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C4"
-                android:id="@+id/W4C4"/>
+                android:id="@+id/W4C4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C5"
-                android:id="@+id/W4C5"/>
+                android:id="@+id/W4C5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C6"
-                android:id="@+id/W4C6"/>
+                android:id="@+id/W4C6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C7"
-                android:id="@+id/W4C7"/>
+                android:id="@+id/W4C7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="C8"
-                android:id="@+id/W4C8"/>
+                android:id="@+id/W4C8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1716,49 +2184,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B1"
-                android:id="@+id/W4B1"/>
+                android:id="@+id/W4B1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B2"
-                android:id="@+id/W4B2"/>
+                android:id="@+id/W4B2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B3"
-                android:id="@+id/W4B3"/>
+                android:id="@+id/W4B3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B4"
-                android:id="@+id/W4B4"/>
+                android:id="@+id/W4B4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B5"
-                android:id="@+id/W4B5"/>
+                android:id="@+id/W4B5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B6"
-                android:id="@+id/W4B6"/>
+                android:id="@+id/W4B6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B7"
-                android:id="@+id/W4B7"/>
+                android:id="@+id/W4B7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="B8"
-                android:id="@+id/W4B8"/>
+                android:id="@+id/W4B8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
@@ -1770,49 +2254,65 @@
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A1"
-                android:id="@+id/W4A1"/>
+                android:id="@+id/W4A1"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A2"
-                android:id="@+id/W4A2"/>
+                android:id="@+id/W4A2"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A3"
-                android:id="@+id/W4A3"/>
+                android:id="@+id/W4A3"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A4"
-                android:id="@+id/W4A4"/>
+                android:id="@+id/W4A4"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A5"
-                android:id="@+id/W4A5"/>
+                android:id="@+id/W4A5"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A6"
-                android:id="@+id/W4A6"/>
+                android:id="@+id/W4A6"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A7"
-                android:id="@+id/W4A7"/>
+                android:id="@+id/W4A7"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_weight="0.125"
                 android:text="A8"
-                android:id="@+id/W4A8"/>
+                android:id="@+id/W4A8"
+                android:onClick="clickduct"
+                android:background="@color/colorPrimary"/>
 
         </TableRow>
 
