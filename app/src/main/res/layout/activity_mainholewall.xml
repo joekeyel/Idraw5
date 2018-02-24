@@ -589,13 +589,31 @@
     </TableLayout>
 
 
-    <Button
-        android:id="@+id/buttonW1"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:onClick="clickductbutton"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonW1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:onClick="clickductbutton"/>
+        <Button
+            android:id="@+id/butoonW1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:onClick="clickductdeletebutton"/>
 
+        <Button
+            android:id="@+id/butoonW1reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:onClick="clickductresetbutton"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
     <TextView
         android:id="@+id/Wall2"
         android:layout_width="wrap_content"
@@ -1170,12 +1188,30 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/buttonW2"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:onClick="clickductbutton"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonW2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:onClick="clickductbutton"/>
+        <Button
+            android:id="@+id/butoonW2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:onClick="clickductdeletebutton"/>
+        <Button
+            android:id="@+id/butoonW2reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:onClick="clickductresetbutton"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
     <TextView
         android:id="@+id/Wall3"
         android:layout_width="wrap_content"
@@ -1751,12 +1787,30 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/buttonW3"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:onClick="clickductbutton"/>
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonW3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:onClick="clickductbutton"/>
+        <Button
+            android:id="@+id/butoonW3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:onClick="clickductdeletebutton"/>
+        <Button
+            android:id="@+id/butoonW3reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:onClick="clickductresetbutton"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
     <TextView
         android:id="@+id/Wall4"
         android:layout_width="wrap_content"
@@ -2331,19 +2385,37 @@
                 android:text="A8"
                 android:id="@+id/W4A8"
                 android:onClick="clickduct"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+              />
 
         </TableRow>
 
     </TableLayout>
-
+<android.support.v7.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
     <Button
         android:id="@+id/buttonW4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:onClick="clickductbutton"/>
+        android:text="Update"
+        android:onClick="clickductbutton"
+       />
+    <Button
+        android:id="@+id/butoonW4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:onClick="clickductdeletebutton"/>
+    <Button
+        android:id="@+id/butoonW4reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:onClick="clickductresetbutton"/>
 
+</android.support.v7.widget.LinearLayoutCompat>
 
 </android.support.v7.widget.LinearLayoutCompat>
     </ScrollView>
