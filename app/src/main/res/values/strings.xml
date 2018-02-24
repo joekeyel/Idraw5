@@ -39,6 +39,15 @@
 
     </string-array>
 
+
+    <string-array name="occupancyvalues">
+        <item>AVAILABLE</item>
+        <item>PARTIALLY UTILIZED</item>
+        <item>FULLY UTILIZED</item>
+        <item>ABANDONED</item>
+
+    </string-array>
+
     <string-array name="Status">
         <item>VOICE OK AT DP</item>
         <item>VOICE OK AT CABINET</item>

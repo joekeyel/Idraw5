@@ -12,10 +12,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +42,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
     LatLng objLatLng;
     String Markername;
     String createby;
+    ductviewmodel nesductid = new ductviewmodel();
 
 
 
@@ -46,6 +50,10 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
     ArrayList<ductviewmodel> nestductmodelsarraydel = new ArrayList();
 
     AlertDialog alert;
+    AlertDialog alertoccupancy;
+
+    String occupancystr = "AVAILABLE";
+    Spinner occupancyspinner;
 
 
     @Override
@@ -72,6 +80,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
      String idresource = view.getResources().getResourceName(view.getId());
      String ids = idresource.replace("my.com.tm.idraw:id/","");
+
 
         ductviewmodel nestductobject = new ductviewmodel();
 
@@ -121,12 +130,23 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
 //if taken then user touch it...this plan to delete
 
-        if(intID == Color.GREEN){
+        if(intID == Color.GREEN || intID == Color.YELLOW || intID == Color.BLACK || intID ==Color.RED){
 
             texttouch.setPaintFlags(texttouch.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
 
+
+
+           nesductid.setWallduct(ids);
+           nesductid.setWallductview(view.getId());
+           nesductid.setNesductid(texttouch.getTag().toString());
+
+           show_alert_occupancy();
+
+
+
             nestductobject.setWallduct(ids);
             nestductobject.setWallductview(view.getId());
+
             nestductmodelsarraydel.add(nestductobject);
 
         }
@@ -230,6 +250,98 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
     }
 
 
+    public void show_alert_occupancy(){
+
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+        alertoccupancy = alertDialog.create();
+
+        alertoccupancy.setTitle("Select Occupancy");
+
+        final String ductname = nesductid.getWallduct();
+        final Integer viewid = nesductid.getWallductview();
+
+
+        LayoutInflater inflater = getLayoutInflater();
+
+        // inflate the custom popup layout
+        final View convertView = inflater.inflate(R.layout.alert_occupancy, null);
+
+        TextView wallductname = (TextView)convertView.findViewById(R.id.ductnameid);
+        wallductname.setText(ductname);
+
+
+
+
+        occupancyspinner = (Spinner) convertView.findViewById(R.id.spinneroccupancy);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.occupancyvalues, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        occupancyspinner.setAdapter(adapter);
+
+        occupancyspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+
+                occupancystr = parent.getItemAtPosition(pos).toString();
+
+
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
+
+        final Button updateoccupancy = (Button)convertView.findViewById(R.id.updateoccupancy);
+        updateoccupancy.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                EditText ductcode = (EditText)convertView.findViewById(R.id.cablecodeduct);
+                final String ductcodestr = ductcode.getText().toString();
+
+
+                   updateoccupancyfirebase(occupancystr,ductname);
+
+
+                    if(!ductcodestr.isEmpty()){
+
+                        updatecablecodefirebase(ductcodestr,ductname);
+                    }
+
+                loadfirebasewallduct();
+                alertoccupancy.dismiss();
+
+            }
+        });
+
+
+
+        Button deleteduct = (Button)convertView.findViewById(R.id.deleteduct);
+        deleteduct.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+
+
+                deletefirebase(ductname,viewid);
+
+
+
+                loadfirebasewallduct();
+                alertoccupancy.dismiss();
+
+            }
+        });
+
+        alertoccupancy.setView(convertView);
+
+        alertoccupancy.show();
+
+    }
+
     public void show_dialog_nesduct_name(final View view) {
 
         final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -294,10 +406,48 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                     .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).child("nestductid").setValue(nestid);
 
 
+            myRef.child("photomarkeridraw/" + FirebaseAuth
+                    .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).child("occupancy").setValue("AVAILABLE");
+
+
         }
 
 
     }
+
+    public void updateoccupancyfirebase(String occupancy,String wallduct){
+
+        if (createby.equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
+
+            FirebaseDatabase databasefirebase = FirebaseDatabase.getInstance();
+            final DatabaseReference myRef = databasefirebase.getReference();
+            myRef.child("photomarkeridraw/" + FirebaseAuth
+                    .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).child("occupancy").setValue(occupancy);
+
+
+
+        }
+
+
+    }
+
+
+    public void updatecablecodefirebase(String cablecode,String wallduct){
+
+        if (createby.equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
+
+            FirebaseDatabase databasefirebase = FirebaseDatabase.getInstance();
+            final DatabaseReference myRef = databasefirebase.getReference();
+            myRef.child("photomarkeridraw/" + FirebaseAuth
+                    .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).child("cablecode").setValue(cablecode);
+
+
+
+        }
+
+
+    }
+
 
     public void deletefirebase(String wallduct,Integer viewid){
 
@@ -363,14 +513,75 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
                             if(!key.equals("createdby") && !key.equals("lat") && !key.equals("lng")){
 
+                                String viewid = null;
+
+
                                 for (DataSnapshot child4 : child3.getChildren()) {//wallduct itemname
+                                    //loop to get teamid
 
-                                    if(child4.getKey().toString().equals("textviewid") ) {
-                                        String viewid = child4.getValue().toString();
+                                    if(child4.getKey().toString().equals("textviewid")  ) {
 
-                                        TextView occupyduct = (TextView) findViewById(Integer.parseInt(viewid));
-                                        occupyduct.setBackgroundColor(Color.GREEN);
-                                        occupyduct.setPaintFlags(occupyduct.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+                                        viewid = child4.getValue().toString();
+
+
+
+                                    }
+                                }
+
+
+                                //to change color base on occupancy loop again
+
+
+                                for (DataSnapshot child4 : child3.getChildren()) {//loop again to change color
+
+                                    TextView occupyduct = (TextView) findViewById(Integer.parseInt(viewid));
+
+                                    occupyduct.setPaintFlags(occupyduct.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+
+                                    if(child4.getValue().toString().equals("AVAILABLE")  ) {
+
+                                        TextView occupyduct2 = (TextView) findViewById(Integer.parseInt(viewid));
+                                        occupyduct2.setBackgroundColor(Color.GREEN);
+
+
+                                    }
+
+                                    if(child4.getValue().toString().equals("PARTIALLY UTILIZED")  ) {
+
+                                        TextView occupyduct2 = (TextView) findViewById(Integer.parseInt(viewid));
+                                        occupyduct2.setBackgroundColor(Color.YELLOW);
+
+
+                                    }
+
+
+                                    if(child4.getValue().toString().equals("FULLY UTILIZED")  ) {
+
+                                        TextView occupyduct2 = (TextView) findViewById(Integer.parseInt(viewid));
+                                        occupyduct2.setBackgroundColor(Color.RED);
+
+
+                                    }
+
+                                    if(child4.getValue().toString().equals("ABANDONED")  ) {
+
+                                        TextView occupyduct2 = (TextView) findViewById(Integer.parseInt(viewid));
+                                        occupyduct2.setBackgroundColor(Color.BLACK);
+
+
+                                    }
+
+
+                                    //tag the textview
+
+                                    if(child4.getKey().toString().equals("nestductid")  ) {
+
+                                        String nesductid = child4.getValue().toString();
+
+                                        TextView occupyduct3 = (TextView) findViewById(Integer.parseInt(viewid));
+                                        occupyduct3.setTag(nesductid);
+
+
                                     }
                                 }
 

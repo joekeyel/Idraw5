@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/ductnameid"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:text="TextView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cablecodeduct"
+        android:hint="CABLE CODE"/>
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinneroccupancy"
+        android:spinnerMode="dropdown"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:background="@android:drawable/btn_dropdown"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/updateoccupancy"
+            android:layout_weight="0.5"
+           android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Update" />
+        <Button
+            android:id="@+id/deleteduct"
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
+           android:layout_height="wrap_content"
+            android:text="Delete" />
+
+    </LinearLayout>
+
+</LinearLayout>
