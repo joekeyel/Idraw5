@@ -1,5 +1,7 @@
 package my.com.tm.idraw;
 
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,6 +21,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -631,6 +635,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
 
         rootref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("ResourceType")
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -650,32 +655,52 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
                 String nesduct = child.getKey().toString();
 
+
+
+
                     for (DataSnapshot child2: child.getChildren() ) {
 
                         if(child2.getKey().toString().contains("W1")) {
 
-                            if(!showdata.getText().toString().contains(nesduct))
+                            if(!showdata.getText().toString().contains(nesduct)){
 
-                               showdata.setText(showdata.getText() + nesduct + ",");
+
+
+                                showdata.setText(showdata.getText() +"NestDuct:"+ nesduct + System.getProperty("line.separator"));
+
+
+
+                            }
+                            showdata.setText(showdata.getText() + child2.getKey().toString() +" "+child2.getValue()+ System.getProperty("line.separator"));
+
+
                         }
 
                         if(child2.getKey().toString().contains("W2") ) {
 
 
-                            if(!showdata2.getText().toString().contains(nesduct))
-                                showdata2.setText(showdata2.getText() + nesduct + ",");
+                            if(!showdata2.getText().toString().contains(nesduct)) {
+                                showdata2.setText(showdata2.getText() +"NestDuct:"+ nesduct + System.getProperty("line.separator"));
+                            }
 
+                            showdata2.setText(showdata2.getText() + child2.getKey().toString()+" "+child2.getValue()+ System.getProperty("line.separator"));
 
                         }
                         if(child2.getKey().toString().contains("W3") ) {
 
-                            if(!showdata3.getText().toString().contains(nesduct))
-                                showdata3.setText(showdata3.getText() + nesduct + ",");
+                            if(!showdata3.getText().toString().contains(nesduct)) {
+                                showdata3.setText(showdata3.getText()+"NestDuct:"+ nesduct + System.getProperty("line.separator"));
+                            }
+
+                            showdata3.setText(showdata3.getText() + child2.getKey().toString() +" "+child2.getValue()+ System.getProperty("line.separator"));
                         }
 
                         if(child2.getKey().toString().contains("W4")) {
-                            if(!showdata4.getText().toString().contains(nesduct))
-                                showdata4.setText(showdata4.getText() + nesduct + ",");
+                            if(!showdata4.getText().toString().contains(nesduct)){
+                                showdata4.setText(showdata4.getText() +"NestDuct:"+ nesduct+ System.getProperty("line.separator"));
+                            }
+
+                            showdata4.setText(showdata4.getText() + child2.getKey().toString() +" "+child2.getValue()+ System.getProperty("line.separator"));
                         }
 
 
