@@ -146,6 +146,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
             nestductobject.setWallduct(ids);
             nestductobject.setWallductview(view.getId());
+            nestductobject.setNesductid(texttouch.getTag().toString());
 
             nestductmodelsarraydel.add(nestductobject);
 
@@ -189,6 +190,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
                 String wallduct = nestductmodelsarraydel.get(l).getWallduct();
                 Integer viewid = nestductmodelsarraydel.get(l).getWallductview();
+                String nesductid = nestductmodelsarraydel.get(l).getNesductid();
 
 
                 String walls = wallduct.substring(0, 2);
@@ -197,7 +199,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
 
 
-                    deletefirebase(wallduct,viewid);
+                    deletefirebase(wallduct,viewid,nesductid);
                 }
 
 
@@ -260,6 +262,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
         final String ductname = nesductid.getWallduct();
         final Integer viewid = nesductid.getWallductview();
+        final String nesductidstr = nesductid.getNesductid();
 
 
         LayoutInflater inflater = getLayoutInflater();
@@ -304,7 +307,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                 final String ductcodestr = ductcode.getText().toString();
 
 
-                   updateoccupancyfirebase(occupancystr,ductname);
+                   updateoccupancyfirebase(occupancystr,ductname,nesductidstr);
 
 
                     if(!ductcodestr.isEmpty()){
@@ -326,7 +329,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                 // Perform action on click
 
 
-                deletefirebase(ductname,viewid);
+                deletefirebase(ductname,viewid,nesductidstr);
 
 
 
@@ -408,6 +411,10 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
             myRef.child("photomarkeridraw/" + FirebaseAuth
                     .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).child("occupancy").setValue("AVAILABLE");
+            //nestduct record
+
+            myRef.child("Nesductid"+ "/"+Markername+"/" + nestid).child(wallduct).setValue("AVAILABLE");
+
 
 
         }
@@ -415,7 +422,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
     }
 
-    public void updateoccupancyfirebase(String occupancy,String wallduct){
+    public void updateoccupancyfirebase(String occupancy,String wallduct,String nestid){
 
         if (createby.equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
 
@@ -424,6 +431,9 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
             myRef.child("photomarkeridraw/" + FirebaseAuth
                     .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).child("occupancy").setValue(occupancy);
 
+
+            myRef.child("Nesductid"+ "/"+Markername+"/" + nestid).child(wallduct).setValue(occupancy);
+           // myRef.child("mainholeutilization"+ "/"+Markername+"/" + nestid).child(wallduct).setValue(occupancy);
 
 
         }
@@ -449,7 +459,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
     }
 
 
-    public void deletefirebase(String wallduct,Integer viewid){
+    public void deletefirebase(String wallduct,Integer viewid,String nesductid){
 
         if (createby.equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
 
@@ -462,6 +472,9 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
             strikethru.setBackgroundColor(Color.parseColor("#3f51b5"));
             strikethru.setPaintFlags(strikethru.getPaintFlags() & (~ Paint.STRIKE_THRU_TEXT_FLAG));
+
+
+            myRef.child("Nesductid"+ "/"+Markername+"/" + nesductid).child(wallduct).removeValue();
 
         }
 
@@ -498,6 +511,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
 
                 for (DataSnapshot child: dataSnapshot.getChildren()) {//useridcreated
+
 
 
                     for (DataSnapshot child2 : child.getChildren()) {//mainholename
@@ -608,6 +622,78 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                 Log.w("FIREBASELOAD", "loadPost:onCancelled", databaseError.toException());
                 // ...
             }
+        });
+
+
+
+        FirebaseDatabase databasefirebasesummary = FirebaseDatabase.getInstance();
+        final DatabaseReference rootref = databasefirebasesummary.getReference("Nesductid").child(Markername);
+
+
+        rootref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                TextView showdata = (TextView)findViewById(R.id.showdata);
+                TextView showdata2 = (TextView)findViewById(R.id.showdata2);
+                TextView showdata3 = (TextView)findViewById(R.id.showdata3);
+                TextView showdata4 = (TextView)findViewById(R.id.showdata4);
+
+                showdata.setText("");
+                showdata2.setText("");
+                showdata3.setText("");
+                showdata4.setText("");
+
+
+
+                for (DataSnapshot child: dataSnapshot.getChildren()) {
+
+                String nesduct = child.getKey().toString();
+
+                    for (DataSnapshot child2: child.getChildren() ) {
+
+                        if(child2.getKey().toString().contains("W1")) {
+
+                            if(!showdata.getText().toString().contains(nesduct))
+
+                               showdata.setText(showdata.getText() + nesduct + ",");
+                        }
+
+                        if(child2.getKey().toString().contains("W2") ) {
+
+
+                            if(!showdata2.getText().toString().contains(nesduct))
+                                showdata2.setText(showdata2.getText() + nesduct + ",");
+
+
+                        }
+                        if(child2.getKey().toString().contains("W3") ) {
+
+                            if(!showdata3.getText().toString().contains(nesduct))
+                                showdata3.setText(showdata3.getText() + nesduct + ",");
+                        }
+
+                        if(child2.getKey().toString().contains("W4")) {
+                            if(!showdata4.getText().toString().contains(nesduct))
+                                showdata4.setText(showdata4.getText() + nesduct + ",");
+                        }
+
+
+                    }
+
+
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+
         });
 
        resetscreen();

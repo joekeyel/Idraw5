@@ -17,6 +17,12 @@
         android:layout_height="wrap_content"
         android:text="Wall 1" />
 
+    <TextView
+        android:id="@+id/showdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -620,6 +626,12 @@
         android:layout_height="wrap_content"
         android:text="Wall 2" />
 
+    <TextView
+        android:id="@+id/showdata2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -1217,6 +1229,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wall 3" />
+
+    <TextView
+        android:id="@+id/showdata3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -1816,6 +1834,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wall 4" />
+
+    <TextView
+        android:id="@+id/showdata4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
