@@ -125,8 +125,8 @@ public class login extends AppCompatActivity {
             permissionsNeeded.add("GPS");
         if (!addPermission(permissionsList, Manifest.permission.ACCESS_FINE_LOCATION))
             permissionsNeeded.add("MY LOCATION");
-//        if (!addPermission(permissionsList,android.Manifest.permission.CAMERA))
-//            permissionsNeeded.add("Use Camera");
+        if (!addPermission(permissionsList,android.Manifest.permission.CAMERA))
+            permissionsNeeded.add("Use Camera");
 //        if (!addPermission(permissionsList, Manifest.permission.GET_ACCOUNTS))
 //            permissionsNeeded.add("Read Contacts");
 //        if (!addPermission(permissionsList, Manifest.permission.READ_PHONE_STATE))
