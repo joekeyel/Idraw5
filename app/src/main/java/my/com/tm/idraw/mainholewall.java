@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -274,10 +275,36 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
         // inflate the custom popup layout
         final View convertView = inflater.inflate(R.layout.alert_occupancy, null);
 
-        TextView wallductname = (TextView)convertView.findViewById(R.id.ductnameid);
+        final TextView wallductname = (TextView)convertView.findViewById(R.id.ductnameid);
         wallductname.setText(ductname);
 
+        //this to set the slider bar inserting utilization
 
+         SeekBar utilizationseekbar = (SeekBar)convertView.findViewById(R.id.utilizationsb);
+         final TextView utizaltiontv = (TextView)convertView.findViewById(R.id.utilizationet);
+
+         utilizationseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+           int progressChangedValue = 0;
+
+           public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+               progressChangedValue = progress;
+
+               utizaltiontv.setText(String.valueOf(progressChangedValue));
+           }
+
+           public void onStartTrackingTouch(SeekBar seekBar) {
+               // TODO Auto-generated method stub
+           }
+
+           public void onStopTrackingTouch(SeekBar seekBar) {
+
+
+
+               utizaltiontv.setText(String.valueOf(progressChangedValue));
+               updateutilizationfirebase(String.valueOf(progressChangedValue),ductname,nesductidstr);
+
+           }
+       });
 
 
         occupancyspinner = (Spinner) convertView.findViewById(R.id.spinneroccupancy);
@@ -418,8 +445,8 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
             //nestduct record
 
             myRef.child("Nesductid"+ "/"+Markername+"/" + nestid).child(wallduct).setValue("AVAILABLE");
-
-
+            myRef.child("Nesductidutilization"+ "/"+Markername+"/" + nestid).child(wallduct).child("occupancy").setValue("AVAILABLE");
+            myRef.child("Nesductidutilization"+ "/"+Markername+"/" + nestid).child(wallduct).child("utilization").setValue("0");
 
         }
 
@@ -437,7 +464,29 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
 
             myRef.child("Nesductid"+ "/"+Markername+"/" + nestid).child(wallduct).setValue(occupancy);
+            myRef.child("Nesductidutilization"+ "/"+Markername+"/" + nestid).child(wallduct).child("occupancy").setValue(occupancy);
            // myRef.child("mainholeutilization"+ "/"+Markername+"/" + nestid).child(wallduct).setValue(occupancy);
+
+
+        }
+
+
+    }
+
+
+    public void updateutilizationfirebase(String utilization,String wallduct,String nestid){
+
+        if (createby.equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
+
+            FirebaseDatabase databasefirebase = FirebaseDatabase.getInstance();
+            final DatabaseReference myRef = databasefirebase.getReference();
+            myRef.child("photomarkeridraw/" + FirebaseAuth
+                    .getInstance().getCurrentUser().getUid() + "/" + Markername).child(wallduct).child("utilization").setValue(utilization);
+
+
+            //myRef.child("Nesductid"+ "/"+Markername+"/" + nestid).child(wallduct).setValue(utilization);
+            myRef.child("Nesductidutilization"+ "/"+Markername+"/" + nestid).child(wallduct).child("utilization").setValue(utilization);
+            // myRef.child("mainholeutilization"+ "/"+Markername+"/" + nestid).child(wallduct).setValue(occupancy);
 
 
         }
@@ -479,6 +528,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
 
             myRef.child("Nesductid"+ "/"+Markername+"/" + nesductid).child(wallduct).removeValue();
+            myRef.child("Nesductidutilization"+ "/"+Markername+"/" + nesductid).child(wallduct).removeValue();
 
         }
 
@@ -629,9 +679,19 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
         });
 
 
+      // loadsummaryfirebase("Nesductid2");
+        loadsummaryfirebase("Nesductidutilization");
+
+       resetscreen();
+
+    }
+
+
+
+    public void loadsummaryfirebase(String column) {
 
         FirebaseDatabase databasefirebasesummary = FirebaseDatabase.getInstance();
-        final DatabaseReference rootref = databasefirebasesummary.getReference("Nesductid").child(Markername);
+        final DatabaseReference rootref = databasefirebasesummary.getReference(column).child(Markername);
 
 
         rootref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -639,10 +699,10 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                TextView showdata = (TextView)findViewById(R.id.showdata);
-                TextView showdata2 = (TextView)findViewById(R.id.showdata2);
-                TextView showdata3 = (TextView)findViewById(R.id.showdata3);
-                TextView showdata4 = (TextView)findViewById(R.id.showdata4);
+                TextView showdata = (TextView) findViewById(R.id.showdata);
+                TextView showdata2 = (TextView) findViewById(R.id.showdata2);
+                TextView showdata3 = (TextView) findViewById(R.id.showdata3);
+                TextView showdata4 = (TextView) findViewById(R.id.showdata4);
 
                 showdata.setText("");
                 showdata2.setText("");
@@ -650,63 +710,57 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                 showdata4.setText("");
 
 
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
 
-                for (DataSnapshot child: dataSnapshot.getChildren()) {
-
-                String nesduct = child.getKey().toString();
-
+                    String nesduct = child.getKey().toString();
 
 
+                    for (DataSnapshot child2 : child.getChildren()) {
 
-                    for (DataSnapshot child2: child.getChildren() ) {
+                        if (child2.getKey().toString().contains("W1")) {
 
-                        if(child2.getKey().toString().contains("W1")) {
-
-                            if(!showdata.getText().toString().contains(nesduct)){
-
+                            if (!showdata.getText().toString().contains(nesduct)) {
 
 
-                                showdata.setText(showdata.getText() +"NestDuct:"+ nesduct + System.getProperty("line.separator"));
-
+                                showdata.setText(showdata.getText() + "NestDuct:" + nesduct + System.getProperty("line.separator"));
 
 
                             }
-                            showdata.setText(showdata.getText() + child2.getKey().toString() +" "+child2.getValue()+ System.getProperty("line.separator"));
+                            showdata.setText(showdata.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
+                            showdata.setText(showdata.getText()  + " " + child2.child("utilization").getValue() + System.getProperty("line.separator"));
 
 
                         }
 
-                        if(child2.getKey().toString().contains("W2") ) {
+                        if (child2.getKey().toString().contains("W2")) {
 
 
-                            if(!showdata2.getText().toString().contains(nesduct)) {
-                                showdata2.setText(showdata2.getText() +"NestDuct:"+ nesduct + System.getProperty("line.separator"));
+                            if (!showdata2.getText().toString().contains(nesduct)) {
+                                showdata2.setText(showdata2.getText() + "NestDuct:" + nesduct + System.getProperty("line.separator"));
                             }
-
-                            showdata2.setText(showdata2.getText() + child2.getKey().toString()+" "+child2.getValue()+ System.getProperty("line.separator"));
+                            showdata.setText(showdata.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
+                            showdata2.setText(showdata2.getText() +  " " + child2.child("utilization").getValue() + System.getProperty("line.separator"));
 
                         }
-                        if(child2.getKey().toString().contains("W3") ) {
+                        if (child2.getKey().toString().contains("W3")) {
 
-                            if(!showdata3.getText().toString().contains(nesduct)) {
-                                showdata3.setText(showdata3.getText()+"NestDuct:"+ nesduct + System.getProperty("line.separator"));
+                            if (!showdata3.getText().toString().contains(nesduct)) {
+                                showdata3.setText(showdata3.getText() + "NestDuct:" + nesduct + System.getProperty("line.separator"));
                             }
-
-                            showdata3.setText(showdata3.getText() + child2.getKey().toString() +" "+child2.getValue()+ System.getProperty("line.separator"));
+                            showdata.setText(showdata.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
+                            showdata3.setText(showdata3.getText() +  " " + child2.child("utilization").getValue() + System.getProperty("line.separator"));
                         }
 
-                        if(child2.getKey().toString().contains("W4")) {
-                            if(!showdata4.getText().toString().contains(nesduct)){
-                                showdata4.setText(showdata4.getText() +"NestDuct:"+ nesduct+ System.getProperty("line.separator"));
+                        if (child2.getKey().toString().contains("W4")) {
+                            if (!showdata4.getText().toString().contains(nesduct)) {
+                                showdata4.setText(showdata4.getText() + "NestDuct:" + nesduct + System.getProperty("line.separator"));
                             }
-
-                            showdata4.setText(showdata4.getText() + child2.getKey().toString() +" "+child2.getValue()+ System.getProperty("line.separator"));
+                            showdata.setText(showdata.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
+                            showdata4.setText(showdata4.getText() + " " + child2.child("utilization").getValue() + System.getProperty("line.separator"));
                         }
 
 
                     }
-
-
 
 
                 }
@@ -721,11 +775,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
         });
 
-       resetscreen();
-
     }
-
-
 
     public void resetscreen(){
 
@@ -762,4 +812,6 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
     public void onDismiss(DialogInterface dialog) {
         resetscreen();
     }
+
+
 }

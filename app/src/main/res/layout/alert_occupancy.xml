@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/ductnameid"
         android:layout_width="match_parent"
-        android:layout_height="31dp"
+        android:layout_height="38dp"
         android:text="TextView" />
 
     <EditText
@@ -15,6 +15,27 @@
         android:layout_height="wrap_content"
         android:id="@+id/cablecodeduct"
         android:hint="CABLE CODE"/>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:text="Utilization" />
+
+    <TextView
+        android:id="@+id/utilizationet"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/utilizationsb"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:hint="UTILIZATION"
+        android:max="100"
+        android:tooltipText="Utization" />
 
 
     <Spinner
