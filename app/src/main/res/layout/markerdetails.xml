@@ -37,13 +37,13 @@
             android:layout_margin="10dp"
             android:lines="4" />
 
-        <EditText
-            android:id="@+id/updateremark"
-            android:layout_width="match_parent"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:lines="4"
-            android:layout_height="1dp"/>
+        <!--<EditText-->
+            <!--android:id="@+id/updateremark"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:ems="10"-->
+            <!--android:inputType="textMultiLine"-->
+            <!--android:lines="4"-->
+            <!--android:layout_height="1dp"/>-->
 
         <Button
             android:id="@+id/copylatitude"

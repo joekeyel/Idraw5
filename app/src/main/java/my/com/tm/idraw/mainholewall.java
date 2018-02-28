@@ -74,6 +74,9 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
        createby = getIntent().getStringExtra("markercreateby");
 
 
+       TextView mainholeid = (TextView)findViewById(R.id.manholename);
+       mainholeid.setText(Markername);
+
        loadfirebasewallduct();
 
 
@@ -709,15 +712,35 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                 showdata3.setText("");
                 showdata4.setText("");
 
+                int countductw1 = 0;
+                int countutilizationw1 = 0;
+
+                int countductw2 = 0;
+                int countutilizationw2 = 0;
+
+                int countductw3 = 0;
+                int countutilizationw3 = 0;
+
+                int countductw4 = 0;
+                int countutilizationw4 = 0;
 
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
 
                     String nesduct = child.getKey().toString();
 
 
+
+
+
                     for (DataSnapshot child2 : child.getChildren()) {
 
+
+
                         if (child2.getKey().toString().contains("W1")) {
+
+                            countductw1++;
+                            countutilizationw1 = countutilizationw1+Integer.valueOf(child2.child("utilization").getValue().toString());
+
 
                             if (!showdata.getText().toString().contains(nesduct)) {
 
@@ -733,37 +756,108 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                         }
 
                         if (child2.getKey().toString().contains("W2")) {
+                            countductw2++;
+                            countutilizationw2 = countutilizationw2+Integer.valueOf(child2.child("utilization").getValue().toString());
 
 
                             if (!showdata2.getText().toString().contains(nesduct)) {
                                 showdata2.setText(showdata2.getText() + "NestDuct:" + nesduct + System.getProperty("line.separator"));
                             }
-                            showdata.setText(showdata.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
+                            showdata2.setText(showdata2.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
                             showdata2.setText(showdata2.getText() +  " " + child2.child("utilization").getValue() + System.getProperty("line.separator"));
 
                         }
                         if (child2.getKey().toString().contains("W3")) {
+                            countductw3++;
+                            countutilizationw3 = countutilizationw3+Integer.valueOf(child2.child("utilization").getValue().toString());
+
 
                             if (!showdata3.getText().toString().contains(nesduct)) {
                                 showdata3.setText(showdata3.getText() + "NestDuct:" + nesduct + System.getProperty("line.separator"));
                             }
-                            showdata.setText(showdata.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
+                            showdata3.setText(showdata3.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
                             showdata3.setText(showdata3.getText() +  " " + child2.child("utilization").getValue() + System.getProperty("line.separator"));
                         }
 
+
+
                         if (child2.getKey().toString().contains("W4")) {
+                            countductw4++;
+                            countutilizationw4 = countutilizationw4+Integer.valueOf(child2.child("utilization").getValue().toString());
+
                             if (!showdata4.getText().toString().contains(nesduct)) {
                                 showdata4.setText(showdata4.getText() + "NestDuct:" + nesduct + System.getProperty("line.separator"));
                             }
-                            showdata.setText(showdata.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
+                            showdata4.setText(showdata4.getText() + child2.getKey().toString() + " " + child2.child("occupancy").getValue() +" ");
                             showdata4.setText(showdata4.getText() + " " + child2.child("utilization").getValue() + System.getProperty("line.separator"));
-                        }
+                          }
+
 
 
                     }
 
 
+
+
                 }
+
+                int mainholeutilization = 0;
+                int mainholecount = 0;
+
+                if(countductw1>0){
+
+                    Integer avg = countutilizationw1/countductw1;
+                    showdata.setText(showdata.getText().toString() + avg +" Utilization"+System.getProperty("line.separator"));
+                   mainholeutilization = mainholeutilization+avg;
+                   mainholecount++;
+
+
+                    TextView wall1 = (TextView)findViewById(R.id.wall1utilization);
+                    wall1.setText(String.valueOf(avg));
+                }
+
+                if(countductw2>0){
+
+                    Integer avg = countutilizationw2/countductw2;
+                    showdata2.setText(showdata2.getText().toString() + avg +" Utilization"+System.getProperty("line.separator"));
+
+                    mainholeutilization = mainholeutilization+avg;
+                    mainholecount++;
+
+                    TextView wall2 = (TextView)findViewById(R.id.wall2utilization);
+                    wall2.setText(String.valueOf(avg));
+                }
+                if(countductw3>0){
+
+                    Integer avg = countutilizationw3/countductw3;
+                    showdata3.setText(showdata3.getText().toString() + avg +" Utilization"+System.getProperty("line.separator"));
+
+                    mainholeutilization = mainholeutilization+avg;
+                    mainholecount++;
+
+                    TextView wall3 = (TextView)findViewById(R.id.wall3utilization);
+                    wall3.setText(String.valueOf(avg));
+
+
+                }
+                if(countductw4>0){
+
+                    Integer avg = countutilizationw4/countductw4;
+                    showdata4.setText(showdata4.getText().toString() + avg +" Utilization"+System.getProperty("line.separator"));
+                    mainholeutilization = mainholeutilization+avg;
+                    mainholecount++;
+
+
+                    TextView wall4 = (TextView)findViewById(R.id.wall4utilization);
+                    wall4.setText(String.valueOf(avg));
+
+
+                }
+
+                int avgmanhole = mainholeutilization/mainholecount;
+                TextView manhole = (TextView)findViewById(R.id.mainholeutilization);
+                manhole.setText(String.valueOf(avgmanhole));
+
 
             }
 
