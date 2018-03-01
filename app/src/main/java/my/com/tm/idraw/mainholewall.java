@@ -3,12 +3,21 @@ package my.com.tm.idraw;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +27,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SeekBar;
@@ -30,13 +40,25 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -61,6 +83,9 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
     Spinner occupancyspinner;
 
 
+    ImageView wallimage;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +102,10 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
        TextView mainholeid = (TextView)findViewById(R.id.manholename);
        mainholeid.setText(Markername);
 
+       wallimage = (ImageView) findViewById(R.id.wall1imageview);
+
        loadfirebasewallduct();
+       loadimagewall();
 
 
 
@@ -907,5 +935,214 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
         resetscreen();
     }
 
+
+
+    public void selectgallerywall1(View view) {
+
+
+        // Perform action on click
+        Intent camera_intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        File file = getFile(Markername+"_wall1");
+
+        Uri apkURI = FileProvider.getUriForFile(
+                mainholewall.this,
+                mainholewall.this.getApplicationContext()
+                        .getPackageName() + ".provider", file);
+
+
+        camera_intent.putExtra(MediaStore.EXTRA_OUTPUT,
+
+                //photoURI
+                apkURI
+
+        );
+
+        startActivityForResult(camera_intent,1);
+
+
+
+    }
+
+    private File getFile(String filename){
+
+
+        File Folder = new File(Environment.getExternalStorageDirectory() +
+                File.separator +"DCIM");
+
+        if(!Folder.exists()){
+
+            Folder.mkdir();
+        }
+
+        File image_file = new File(Folder,filename+".jpg");
+
+        return image_file;
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
+//
+//        if(requestCode == 0) {
+//
+//            final String path = Environment.getExternalStorageDirectory() +
+//                    File.separator + "camera_remote/" + Markername+"_wall1" + ".jpg";
+//
+//            Bitmap bmp = BitmapFactory.decodeFile(path);
+//            Bitmap photo = Bitmap.createScaledBitmap(bmp, 300, 300, true);
+//
+//            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+//
+//            photo.compress(Bitmap.CompressFormat.JPEG, 40, bytes);
+//
+//            File f = new File(Environment.getExternalStorageDirectory()
+//                    + File.separator + "camera_remote/" + Markername+"_wall1"  + ".jpg");
+//            try {
+//                f.createNewFile();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            FileOutputStream fo = null;
+//            try {
+//                fo = new FileOutputStream(f);
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                fo.write(bytes.toByteArray());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                fo.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//            imagecaptured.setImageDrawable(Drawable.createFromPath(path));
+//        }
+
+        if(requestCode == 1){
+            if (data != null) {
+                Uri contentURI = data.getData();
+
+
+                final String path = Environment.getExternalStorageDirectory() +
+                        File.separator + "DCIM/" + Markername+"_wall1" + ".jpg";
+
+                Bitmap bmp = null;
+                try {
+                    bmp = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.e("Error image Galery", e.toString());
+                }
+                Bitmap photo = Bitmap.createScaledBitmap(bmp, 800, 600, true);
+
+                ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+
+                photo.compress(Bitmap.CompressFormat.JPEG, 80, bytes);
+
+                File f = new File(Environment.getExternalStorageDirectory()
+                        + File.separator + "DCIM/" + Markername+"_wall1" + ".jpg");
+                try {
+                    f.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                FileOutputStream fo = null;
+                try {
+                    fo = new FileOutputStream(f);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    fo.write(bytes.toByteArray());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    fo.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                wallimage.setImageDrawable(Drawable.createFromPath(path));
+            }
+
+
+
+            // Create a storage reference from our app
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageRef = storage.getReference();
+            File file = getFile(Markername+"_wall1");
+//                    Uri photoURI = FileProvider.getUriForFile(MyActivity.this,
+            //       "my.com.tm.moapps.remoteandroid.fileprovider",
+            //        file);
+
+            Uri apkURI = FileProvider.getUriForFile(
+                    mainholewall.this,
+                    mainholewall.this.getApplicationContext()
+                            .getPackageName() + ".provider", file);
+            StorageReference riversRef = storageRef.child("DCIM" + File.separator + apkURI.getLastPathSegment());
+            UploadTask uploadTask = riversRef.putFile(apkURI);
+
+
+            // Register observers to listen for when the download is done or if it fails
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+
+
+                    Toast.makeText(mainholewall.this, "Failed Upload To Server", Toast.LENGTH_SHORT)
+                            .show();
+
+                    // Handle unsuccessful uploads
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                    Uri downloadUrl = taskSnapshot.getDownloadUrl();
+
+                    Toast.makeText(mainholewall.this, "Save to server", Toast.LENGTH_SHORT)
+                            .show();
+
+                }
+            });
+
+
+        }
+    }
+
+  public void loadimagewall(){
+
+      FirebaseStorage storage = FirebaseStorage.getInstance();
+      StorageReference storageRef = storage.getReference();
+
+
+      storageRef.child("DCIM" +File.separator+ Markername+"_wall1" + ".jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+          @Override
+          public void onSuccess(Uri uri) {
+              // TODO: handle uri
+
+              Context context = wallimage.getContext();
+
+              wallimage.invalidate();
+
+              Picasso.with(context).load(uri).networkPolicy(NetworkPolicy.NO_CACHE).into(wallimage);
+
+
+          }
+      }).addOnFailureListener(new OnFailureListener() {
+          @Override
+          public void onFailure(@NonNull Exception exception) {
+              // Handle any errors
+          }
+      });
+  }
 
 }

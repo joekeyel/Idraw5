@@ -278,7 +278,7 @@ public class MyActivity extends AppCompatActivity implements OnMapReadyCallback,
         markerOptions.position(latLng);
         markerOptions.title("Current Position");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
-        mCurrLocationMarker = mMap.addMarker(markerOptions);
+        //mCurrLocationMarker = mMap.addMarker(markerOptions);
 
 
         tagmylocation = markerOptions;
