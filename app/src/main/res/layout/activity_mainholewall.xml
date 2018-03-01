@@ -190,9 +190,11 @@
         android:text="" />
 
 
-    <ImageView android:id="@+id/wall1imageview"
+    <ImageView
+        android:id="@+id/wall1imageview"
         android:layout_width="match_parent"
         android:layout_height="186dp"
+        android:padding="10dp"
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
 
@@ -812,6 +814,12 @@
         android:layout_height="wrap_content"
         android:text="" />
 
+    <ImageView android:id="@+id/wall1imageview2"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:padding="10dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -1403,6 +1411,13 @@
             android:text="Reset"
             android:onClick="clickductresetbutton"/>
 
+        <Button
+            android:id="@+id/gallerywall2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image"
+            android:onClick="selectgallerywall1"/>
+
     </android.support.v7.widget.LinearLayoutCompat>
     <TextView
         android:id="@+id/Wall3"
@@ -1415,6 +1430,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="" />
+
+    <ImageView android:id="@+id/wall1imageview3"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:padding="10dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -2008,6 +2029,13 @@
             android:text="Reset"
             android:onClick="clickductresetbutton"/>
 
+        <Button
+            android:id="@+id/gallerywall3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image"
+            android:onClick="selectgallerywall1"/>
+
     </android.support.v7.widget.LinearLayoutCompat>
     <TextView
         android:id="@+id/Wall4"
@@ -2020,6 +2048,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="" />
+
+    <ImageView android:id="@+id/wall1imageview4"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:padding="10dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -2618,6 +2653,12 @@
         android:layout_height="wrap_content"
         android:text="Reset"
         android:onClick="clickductresetbutton"/>
+    <Button
+        android:id="@+id/gallerywall4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image"
+        android:onClick="selectgallerywall1"/>
 
 </android.support.v7.widget.LinearLayoutCompat>
 

@@ -84,6 +84,11 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
 
     ImageView wallimage;
+    ImageView wallimage2;
+    ImageView wallimage3;
+    ImageView wallimage4;
+
+    String wallselected;
 
 
     @Override
@@ -103,9 +108,15 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
        mainholeid.setText(Markername);
 
        wallimage = (ImageView) findViewById(R.id.wall1imageview);
+        wallimage2 = (ImageView) findViewById(R.id.wall1imageview2);
+        wallimage3 = (ImageView) findViewById(R.id.wall1imageview3);
+        wallimage4 = (ImageView) findViewById(R.id.wall1imageview4);
 
        loadfirebasewallduct();
-       loadimagewall();
+       loadimagewall(wallimage,"wall1");
+        loadimagewall(wallimage2,"wall2");
+        loadimagewall(wallimage3,"wall3");
+        loadimagewall(wallimage4,"wall4");
 
 
 
@@ -939,10 +950,13 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
     public void selectgallerywall1(View view) {
 
+        String idresource = view.getResources().getResourceName(view.getId());
+        String wall = idresource.replace("my.com.tm.idraw:id/gallery","");
+        wallselected = wall;
 
         // Perform action on click
         Intent camera_intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        File file = getFile(Markername+"_wall1");
+        File file = getFile(Markername+"_"+wall);
 
         Uri apkURI = FileProvider.getUriForFile(
                 mainholewall.this,
@@ -956,6 +970,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                 apkURI
 
         );
+
 
         startActivityForResult(camera_intent,1);
 
@@ -985,45 +1000,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
-//
-//        if(requestCode == 0) {
-//
-//            final String path = Environment.getExternalStorageDirectory() +
-//                    File.separator + "camera_remote/" + Markername+"_wall1" + ".jpg";
-//
-//            Bitmap bmp = BitmapFactory.decodeFile(path);
-//            Bitmap photo = Bitmap.createScaledBitmap(bmp, 300, 300, true);
-//
-//            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-//
-//            photo.compress(Bitmap.CompressFormat.JPEG, 40, bytes);
-//
-//            File f = new File(Environment.getExternalStorageDirectory()
-//                    + File.separator + "camera_remote/" + Markername+"_wall1"  + ".jpg");
-//            try {
-//                f.createNewFile();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            FileOutputStream fo = null;
-//            try {
-//                fo = new FileOutputStream(f);
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            }
-//            try {
-//                fo.write(bytes.toByteArray());
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            try {
-//                fo.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            imagecaptured.setImageDrawable(Drawable.createFromPath(path));
-//        }
+
 
         if(requestCode == 1){
             if (data != null) {
@@ -1031,7 +1008,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
 
 
                 final String path = Environment.getExternalStorageDirectory() +
-                        File.separator + "DCIM/" + Markername+"_wall1" + ".jpg";
+                        File.separator + "DCIM/" + Markername+"_"+wallselected + ".jpg";
 
                 Bitmap bmp = null;
                 try {
@@ -1047,7 +1024,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                 photo.compress(Bitmap.CompressFormat.JPEG, 80, bytes);
 
                 File f = new File(Environment.getExternalStorageDirectory()
-                        + File.separator + "DCIM/" + Markername+"_wall1" + ".jpg");
+                        + File.separator + "DCIM/" + Markername+"_"+wallselected + ".jpg");
                 try {
                     f.createNewFile();
                 } catch (IOException e) {
@@ -1070,7 +1047,24 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
                     e.printStackTrace();
                 }
 
-                wallimage.setImageDrawable(Drawable.createFromPath(path));
+
+                if(wallselected.equals("wall1")) {
+
+                    wallimage.setImageDrawable(Drawable.createFromPath(path));
+                }
+                if(wallselected.equals("wall2")) {
+
+                    wallimage2.setImageDrawable(Drawable.createFromPath(path));
+                }
+                if(wallselected.equals("wall3")) {
+
+                    wallimage3.setImageDrawable(Drawable.createFromPath(path));
+                }
+                if(wallselected.equals("wall4")) {
+
+                    wallimage4.setImageDrawable(Drawable.createFromPath(path));
+                }
+
             }
 
 
@@ -1078,7 +1072,7 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
             // Create a storage reference from our app
             FirebaseStorage storage = FirebaseStorage.getInstance();
             StorageReference storageRef = storage.getReference();
-            File file = getFile(Markername+"_wall1");
+            File file = getFile(Markername+"_"+wallselected);
 //                    Uri photoURI = FileProvider.getUriForFile(MyActivity.this,
             //       "my.com.tm.moapps.remoteandroid.fileprovider",
             //        file);
@@ -1118,31 +1112,44 @@ public class mainholewall  extends AppCompatActivity implements DialogInterface.
         }
     }
 
-  public void loadimagewall(){
+  public void loadimagewall(final ImageView view, String wallnumber){
 
-      FirebaseStorage storage = FirebaseStorage.getInstance();
-      StorageReference storageRef = storage.getReference();
+      if (createby.equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
 
-
-      storageRef.child("DCIM" +File.separator+ Markername+"_wall1" + ".jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-          @Override
-          public void onSuccess(Uri uri) {
-              // TODO: handle uri
-
-              Context context = wallimage.getContext();
-
-              wallimage.invalidate();
-
-              Picasso.with(context).load(uri).networkPolicy(NetworkPolicy.NO_CACHE).into(wallimage);
+          FirebaseStorage storage = FirebaseStorage.getInstance();
+          StorageReference storageRef = storage.getReference();
 
 
-          }
-      }).addOnFailureListener(new OnFailureListener() {
-          @Override
-          public void onFailure(@NonNull Exception exception) {
-              // Handle any errors
-          }
-      });
+          storageRef.child("DCIM" + File.separator + Markername + "_" + wallnumber + ".jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+              @Override
+              public void onSuccess(Uri uri) {
+                  // TODO: handle uri
+
+                  Context context = view.getContext();
+
+                  view.invalidate();
+
+                  Picasso.with(context).load(uri).networkPolicy(NetworkPolicy.NO_CACHE).into(view);
+
+
+              }
+          }).addOnFailureListener(new OnFailureListener() {
+              @Override
+              public void onFailure(@NonNull Exception exception) {
+                  // Handle any errors
+              }
+          });
+
+
+      }
+      else{
+
+          Toast.makeText(mainholewall.this, "Only "+createby+" can update this manhole", Toast.LENGTH_SHORT).show();
+
+      }
+
   }
+
+
 
 }
